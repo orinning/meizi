@@ -22,28 +22,28 @@ void FWORD_CO();
 void QUE(struct w_word *input);
 void FQUE();
 
-void REGISTCOM() {                                                  //ÓÃ»§×¢²á
+void REGISTCOM() {                                                  //ç”¨æˆ·æ³¨å†Œ
 	system("cls");
 	struct userna_pw *regi1=(struct userna_pw*)malloc(sizeof(struct userna_pw));
 	FILE *fp;
-	fp = fopen("username_pwCOM.txt", "a+");  //******************* //½«ÓÃ»§ÃûÓÃ½á¹¹Êı×é´æÈëÎÄ¼ş
+	fp = fopen("username_pwCOM.txt", "a+");  //******************* //å°†ç”¨æˆ·åç”¨ç»“æ„æ•°ç»„å­˜å…¥æ–‡ä»¶
 	//memset(regi1->name1, 0, 101 * sizeof(char));
 	//memset(regi1->passd1, 0, 101 * sizeof(char));
 	//memset(regi1->passd2, 0, 101 * sizeof(char));
 	printf("\t*************************\n");
-	printf("\t*  ÇëÊäÈëÄãµÄÓÃ»§Ãû     *\n");
+	printf("\t*  è¯·è¾“å…¥ä½ çš„ç”¨æˆ·å     *\n");
 	gets_s(regi1->name1);	                 
 	//na0 = &uni0;
 	//pw0 = na0;
 	while (1) {
-		printf("\t*  ÇëÊäÈëÄãµÄÃÜÂë       *\n");
-		gets_s(regi1->passd1);                                   //½«ÃÜÂëÓÃÏàÍ¬½á¹¹Êı×é´æÈëÎÄ¼ş
-		printf("\t*  ÇëÔÙÒ»´ÎÊäÈëµÄµÄÃÜÂë: *\n");
+		printf("\t*  è¯·è¾“å…¥ä½ çš„å¯†ç        *\n");
+		gets_s(regi1->passd1);                                   //å°†å¯†ç ç”¨ç›¸åŒç»“æ„æ•°ç»„å­˜å…¥æ–‡ä»¶
+		printf("\t*  è¯·å†ä¸€æ¬¡è¾“å…¥çš„çš„å¯†ç : *\n");
 		gets_s(regi1->passd2);
 
 		if (strcmp(regi1->passd1, regi1->passd2)) {
-			printf("\t*ÄúµÄ¶ş´ÎÃÜÂë²»·ûºÏ*\n");
-			printf("\t*  ÇëÖØĞÂÊäÈë      *\n");
+			printf("\t*æ‚¨çš„äºŒæ¬¡å¯†ç ä¸ç¬¦åˆ*\n");
+			printf("\t*  è¯·é‡æ–°è¾“å…¥      *\n");
 		}
 		else {
 			//strcpy(regi_n->name, regi1.name1);
@@ -53,15 +53,15 @@ void REGISTCOM() {                                                  //ÓÃ»§×¢²á
 			//fputs("\n", fp);
 			//fputs(regi1.passd1, fp);
 			//fputs("\n", fp);
-			printf("*×¢²á³É¹¦*\n");
+			printf("*æ³¨å†ŒæˆåŠŸ*\n");
 			system("pause");
 			fclose(fp);
 			break;
 		}
-	}                //ÓëµÚÒ»´ÎÃÜÂë½øĞĞ±È¶Ô
+	}                //ä¸ç¬¬ä¸€æ¬¡å¯†ç è¿›è¡Œæ¯”å¯¹
 	return ;
 }             
-void loginCOM()                                          //ÓÃ»§µÇÈë
+void loginCOM()                                          //ç”¨æˆ·ç™»å…¥
 {
 	system("cls");
 	struct userna_pw *log1 = (struct userna_pw*)malloc(sizeof(struct userna_pw));
@@ -70,16 +70,16 @@ void loginCOM()                                          //ÓÃ»§µÇÈë
 	//memset(log1->passd1, 0, 101 * sizeof(char));
 	//memset(log1->passd2, 0, 101 * sizeof(char));
 	printf("\t**********************\n");
-	printf("\t*    ÇëÊäÈëÓÃ»§Ãû£º  *\n");
+	printf("\t*    è¯·è¾“å…¥ç”¨æˆ·åï¼š  *\n");
 	gets_s(log1->name1);
-	printf("\t*    ÇëÊäÈëÃÜÂë      *\n");
-	gets_s(log1->passd2);                                          //ÎÄ¼şÂ¼ÈëÃÜÂë ÎÄ¼ş½á¹¹±È¶Ô 
+	printf("\t*    è¯·è¾“å…¥å¯†ç       *\n");
+	gets_s(log1->passd2);                                          //æ–‡ä»¶å½•å…¥å¯†ç  æ–‡ä»¶ç»“æ„æ¯”å¯¹ 
 	//strcat(log1->passd2, "\n");
 	//strcat(log1->name1, "\n");
 	FILE *fp1;
 	fp1 = fopen("username_pwCOM.txt", "r");
 	if (fp1 == NULL) {
-		printf("ÎŞ´ò¿ªÎÄ¼ş¼Ğ\n");
+		printf("æ— æ‰“å¼€æ–‡ä»¶å¤¹\n");
 		return;
 	}
 	int ok = 0;
@@ -94,20 +94,20 @@ void loginCOM()                                          //ÓÃ»§µÇÈë
 		}
 	}
 	if (ok == 1) {
-		printf("µÇÈë³É¹¦");
-		printf("\t*     »Ø³µ½øÈëÏÂÒ»²½        *\n");
+		printf("ç™»å…¥æˆåŠŸ");
+		printf("\t*     å›è½¦è¿›å…¥ä¸‹ä¸€æ­¥        *\n");
 		system("pause");
 		COMMON();
 	}
 	else {
-	printf("µÇÈëÊ§°Ü");
+	printf("ç™»å…¥å¤±è´¥");
 	system("pause");
 	fclose(fp1);
 }
 	return;
 }
 
-void REGISTAD() {                                                  //¹ÜÀíÔ±×¢²á
+void REGISTAD() {                                                  //ç®¡ç†å‘˜æ³¨å†Œ
 	system("cls");
 	
 	memset(regi.name1, 0, 101 * sizeof(char));
@@ -116,20 +116,20 @@ void REGISTAD() {                                                  //¹ÜÀíÔ±×¢²á
 	FILE *fp;
 		fp = fopen("username_pwAD.txt", "a+");  //*******************
 	printf("\t*************************\n");
-	printf("\t*  ÇëÊäÈëÄãµÄÓÃ»§Ãû     *\n");
+	printf("\t*  è¯·è¾“å…¥ä½ çš„ç”¨æˆ·å     *\n");
 	gets_s(regi.name1);
 	//na1 = &uni1;
 	//pw1 = na1;
 	while (1) {
-		printf("\t*  ÇëÊäÈëÄãµÄÃÜÂë       *\n");
-		gets_s(regi.passd1);                                   //½«ÃÜÂëÓÃÏàÍ¬½á¹¹Êı×é´æÈëÎÄ¼ş
-		printf("\t*  ÇëÔÙÒ»´ÎÊäÈëµÄµÄÃÜÂë: *\n");
+		printf("\t*  è¯·è¾“å…¥ä½ çš„å¯†ç        *\n");
+		gets_s(regi.passd1);                                   //å°†å¯†ç ç”¨ç›¸åŒç»“æ„æ•°ç»„å­˜å…¥æ–‡ä»¶
+		printf("\t*  è¯·å†ä¸€æ¬¡è¾“å…¥çš„çš„å¯†ç : *\n");
 		gets_s(regi.passd2);
 
 
 		if (strcmp(regi.passd1, regi.passd2)) {
-			printf("\t*ÄúµÄ¶ş´ÎÃÜÂë²»·ûºÏ*\n");
-			printf("\t*  ÇëÖØĞÂÊäÈë      *\n");
+			printf("\t*æ‚¨çš„äºŒæ¬¡å¯†ç ä¸ç¬¦åˆ*\n");
+			printf("\t*  è¯·é‡æ–°è¾“å…¥      *\n");
 		}
 		else {
 
@@ -140,16 +140,16 @@ void REGISTAD() {                                                  //¹ÜÀíÔ±×¢²á
 			fputs("\n", fp);
 			fputs(regi.passd1, fp);
 			fputs("\n", fp);
-			printf("*×¢²á³É¹¦*\n");
+			printf("*æ³¨å†ŒæˆåŠŸ*\n");
 			system("pause");
 			fclose(fp);
 			loginAD();
 			break;
 		}
-	}                //ÓëµÚÒ»´ÎÃÜÂë½øĞĞ±È¶Ô
+	}                //ä¸ç¬¬ä¸€æ¬¡å¯†ç è¿›è¡Œæ¯”å¯¹
 	return;
 }
-void loginAD()                                          //¹ÜÀíÔ±µÇÈë
+void loginAD()                                          //ç®¡ç†å‘˜ç™»å…¥
 {
 	system("cls");
 	struct userna_pw log,t1;
@@ -157,17 +157,17 @@ void loginAD()                                          //¹ÜÀíÔ±µÇÈë
 	memset(log.passd1, 0, 101 * sizeof(char));
 	memset(log.passd2, 0, 101 * sizeof(char));
 	printf("\t**********************\n");
-	printf("\t*    ÇëÊäÈëÓÃ»§Ãû£º  *\n");
+	printf("\t*    è¯·è¾“å…¥ç”¨æˆ·åï¼š  *\n");
 	printf("\t**********************\n");
-	gets_s(log.name1);                      //ÎÄ¼ş²éÕÒÓÃ»§
-	printf("\t*    ÇëÊäÈëÃÜÂë      *\n");
-	gets_s(log.passd2);                                          //ÎÄ¼şÂ¼ÈëÃÜÂë ÎÄ¼ş½á¹¹±È¶Ô 
+	gets_s(log.name1);                      //æ–‡ä»¶æŸ¥æ‰¾ç”¨æˆ·
+	printf("\t*    è¯·è¾“å…¥å¯†ç       *\n");
+	gets_s(log.passd2);                                          //æ–‡ä»¶å½•å…¥å¯†ç  æ–‡ä»¶ç»“æ„æ¯”å¯¹ 
 	strcat(log.passd2, "\n");
 	strcat(log.name1, "\n");
 	FILE *fp1;
 	fp1 = fopen("username_pwAD.txt", "r");
 	 if (fp1 == NULL) {
-		 printf("ÎŞ´ò¿ªÎÄ¼ş¼Ğ\n");
+		 printf("æ— æ‰“å¼€æ–‡ä»¶å¤¹\n");
 		 return ;
 	}
 	 int ok=0;
@@ -180,15 +180,15 @@ void loginAD()                                          //¹ÜÀíÔ±µÇÈë
 	
 	 }
 	 if (ok == 1) {
-		 printf("µÇÈë³É¹¦\n\n\n");
-		 printf("\t*     »Ø³µ½øÈëÏÂÒ»²½        *\n");
+		 printf("ç™»å…¥æˆåŠŸ\n\n\n");
+		 printf("\t*     å›è½¦è¿›å…¥ä¸‹ä¸€æ­¥        *\n");
 		 system("pause");
 			 ADMIN();
 
 	 }
 	 else {
-		 printf("µÇÈëÊ§°Ü");
-		 printf("\t*     »Ø³µ½øÈëÏÂÒ»²½        *\n");
+		 printf("ç™»å…¥å¤±è´¥");
+		 printf("\t*     å›è½¦è¿›å…¥ä¸‹ä¸€æ­¥        *\n");
 		 system("pause");
 		 fclose(fp1);
 	 }
@@ -204,14 +204,14 @@ char PRINTF1() {
 		{
 			system("cls");
 			printf("\t*****************************\n");
-			printf("\t*   1.ÓÎ¿Í½øÈë              *\n");
+			printf("\t*   1.æ¸¸å®¢è¿›å…¥              *\n");
 			printf("\t*                           *\n");
-			printf("\t*   2.ÆÕÍ¨ÓÃ»§µÇÈëºÍ×¢²á    *\n");
+			printf("\t*   2.æ™®é€šç”¨æˆ·ç™»å…¥å’Œæ³¨å†Œ    *\n");
 			printf("\t*                           *\n");
-			printf("\t*   3.¹ÜÀíÔ±µÇÈëºÍ×¢²á      *\n");
-			printf("\t*                 4.ÍË³ö    *\n");
+			printf("\t*   3.ç®¡ç†å‘˜ç™»å…¥å’Œæ³¨å†Œ      *\n");
+			printf("\t*                 4.é€€å‡º    *\n");
 			printf("\t*****************************\n");
-			printf("ÇëÊäÈëÄúÒª½øĞĞµÄ´¦ÀíµÄÊı×Ö£º\n");
+			printf("è¯·è¾“å…¥æ‚¨è¦è¿›è¡Œçš„å¤„ç†çš„æ•°å­—ï¼š\n");
 			key = getch();
 		} while (key != '1' && key != '2' &&key != '3'&&key !='4');
 		switch (key)
@@ -225,12 +225,12 @@ char PRINTF1() {
 		case '4':
 			exit(0);
 		default:
-			printf("´íÎó");
+			printf("é”™è¯¯");
 			break;
 		}
 	}
 }
-//²éÑ¯µ¥´Ê
+//æŸ¥è¯¢å•è¯
 void PRINTF1_1()
 {
 	
@@ -243,7 +243,7 @@ void PRINTF1_1()
 	memset(tempor, 0, 100 * sizeof(char));
 	system("cls");
 	printf("\t*****************************************\n");
-	printf("\t*      1.ÇëÊäÈëÄúÒª²éÑ¯µÄµ¥´Ê           *\n");
+	printf("\t*      1.è¯·è¾“å…¥æ‚¨è¦æŸ¥è¯¢çš„å•è¯           *\n");
 	printf("\t*****************************************\n");
 	int i = 0;
 	scanf("%s", tempor);
@@ -254,7 +254,7 @@ void PRINTF1_1()
 			//fread(strstr(((struct w_word *)check)->trans_, tempor), sizeof(struct w_word), 20, fp);
 			//puts(check->trans_);
 			//printf("\n");
-			//printf("Àı¾ä.\t");
+			//printf("ä¾‹å¥.\t");
 			//fwrite(((struct w_word *)check)->setence, sizeof(struct w_word),20, fp);
 			//puts(check->setence);
 			printf("\n");
@@ -265,7 +265,7 @@ void PRINTF1_1()
 	}
 	rewind(fp);
 	//fclose(fp);
-	//printf("\t*        »Ø³µ½¡½øĞĞÏÂÒ»²½        \n");
+	//printf("\t*        å›è½¦å¥è¿›è¡Œä¸‹ä¸€æ­¥        \n");
 	//system("pause");
 	//FILE *fpp;
 	//fpp = fopen("wordd.txt", "r");
@@ -276,7 +276,7 @@ void PRINTF1_1()
 				//fread(strstr(((struct w_word *)check)->trans_, tempor), sizeof(struct w_word), 20, fp);
 				puts(check->trans_);
 				//printf("\n");
-				printf("Àı¾ä.\t");
+				printf("ä¾‹å¥.\t");
 				//fwrite(((struct w_word *)check)->setence, sizeof(struct w_word),20, fp);
 				puts(check->setence);
 				printf("\n");
@@ -286,11 +286,11 @@ void PRINTF1_1()
 			}
 		}
 		//system("pause");
-		//printf("\t*        »Ø³µ½¡½øĞĞÏÂÒ»²½        \n");
+		//printf("\t*        å›è½¦å¥è¿›è¡Œä¸‹ä¸€æ­¥        \n");
 		system("pause");
 	
 	if(x==0) {
-		printf("\t*    ÕÒ²»µ½´Ëµ¥´Ê·­Òë     *\n");
+		printf("\t*    æ‰¾ä¸åˆ°æ­¤å•è¯ç¿»è¯‘     *\n");
 		system("pause");
 
 		return ;
@@ -301,15 +301,15 @@ void PRINTF1_1()
 		char key;
 		do {
 			printf("\t*****************************************\n");
-			printf("\t*      ÊÇ·ñÒª½«´Ëµ¥´Ê¼ÇÂ¼µ½µ¥´Ê¼ÇÂ¼±¾   *\n");
-			printf("\t*              1.ÊÇ                     *\n");
-			printf("\t*              2.·ñ                     *\n");
+			printf("\t*      æ˜¯å¦è¦å°†æ­¤å•è¯è®°å½•åˆ°å•è¯è®°å½•æœ¬   *\n");
+			printf("\t*              1.æ˜¯                     *\n");
+			printf("\t*              2.å¦                     *\n");
 			printf("\t*****************************************\n");
 			key = getch();
 		} while (key == '1'&&key == '2');
 		if (key == '1') {
-			WORD_CO(check);          //´æµ¥´ÊÊÕ²Ø±¾
-			printf("\t*          ÒÑ´æÈë         *\n");
+			WORD_CO(check);          //å­˜å•è¯æ”¶è—æœ¬
+			printf("\t*          å·²å­˜å…¥         *\n");
 			system("pause");
 		}
 	}	fclose(fp);
@@ -317,7 +317,7 @@ void PRINTF1_1()
 }
 
 
-//µÇÂ¼ºÍ×¢²á½çÃæ
+//ç™»å½•å’Œæ³¨å†Œç•Œé¢
 void PRINTF2_1() {
 	
 	char key2_1=0;
@@ -325,10 +325,10 @@ void PRINTF2_1() {
 	{
 		system("cls");
 		printf("\t***********************************\n");
-		printf("\t*          ÆÕÍ¨ÓÃ»§               *\n");
-		printf("\t*           1.µÇÈë                *\n");
-		printf("\t*           2.×¢²á                *\n");
-		printf("\t*                           3.ÍË³ö*\n");
+		printf("\t*          æ™®é€šç”¨æˆ·               *\n");
+		printf("\t*           1.ç™»å…¥                *\n");
+		printf("\t*           2.æ³¨å†Œ                *\n");
+		printf("\t*                           3.é€€å‡º*\n");
 		printf("\t***********************************\n");
 		key2_1 = getch();
 	} while (key2_1 != '1' && key2_1 != '2'&& key2_1 != '3');
@@ -338,7 +338,7 @@ void PRINTF2_1() {
 	}
 	else if (key2_1 == '2') {
 		REGISTCOM();
-		printf("*          Çë°´»Ø³µ½¡µÇÈë         *\n");
+		printf("*          è¯·æŒ‰å›è½¦å¥ç™»å…¥         *\n");
 		system("pause");
 		loginCOM();
 		return;
@@ -355,10 +355,10 @@ void PRINTF3_1() {
 	{
 		system("cls");
 		printf("\t*****************************\n");
-		printf("\t*           ¹ÜÀíÔ±          *\n");
-		printf("\t*          1.µÇÈë           *\n");
-		printf("\t*          2.×¢²á           *\n");
-		printf("\t*                     3.ÍË³ö*\n");
+		printf("\t*           ç®¡ç†å‘˜          *\n");
+		printf("\t*          1.ç™»å…¥           *\n");
+		printf("\t*          2.æ³¨å†Œ           *\n");
+		printf("\t*                     3.é€€å‡º*\n");
 		printf("\t*****************************\n");
 		key3_1 = getch();
 	} while (key3_1 != '1'&&key3_1 != '2'&&key3_1 != '3');
@@ -368,7 +368,7 @@ void PRINTF3_1() {
 	}
 	else if (key3_1 == '2') {
 		REGISTAD();
-		printf("\t *       µÇÈë       *\n");
+		printf("\t *       ç™»å…¥       *\n");
 		system("pause");
 		loginAD();
 		return;
@@ -377,7 +377,7 @@ void PRINTF3_1() {
 		return;
 }
 
-//¹ÜÀíÔ±¹¦ÄÜ
+//ç®¡ç†å‘˜åŠŸèƒ½
 void ADMIN() {
 	char keyA=0;
 	while (1) {
@@ -386,11 +386,11 @@ void ADMIN() {
 		{
 			system("cls");
 			printf("\t*****************************************\n");
-			printf("\t*          1.²éÑ¯µ¥´Ê                   *\n");
-			printf("\t*          2.µ¼Èëµ¥´Ê                   *\n");
-			printf("\t*          3.²é¿´µ¥´ÊĞÅÏ¢               *\n");
-			printf("\t*          4.²é¿´ºÍ¹ÜÀíÓÃ»§             *\n");
-			printf("\t*                             5.ÍË³ö    *\n");
+			printf("\t*          1.æŸ¥è¯¢å•è¯                   *\n");
+			printf("\t*          2.å¯¼å…¥å•è¯                   *\n");
+			printf("\t*          3.æŸ¥çœ‹å•è¯ä¿¡æ¯               *\n");
+			printf("\t*          4.æŸ¥çœ‹å’Œç®¡ç†ç”¨æˆ·             *\n");
+			printf("\t*                             5.é€€å‡º    *\n");
 			printf("\t*****************************************\n");
 			keyA = getch();
 		} while (keyA != '1'&&keyA != '2'&&keyA != '3'&&keyA != '4'&&keyA != '5');
@@ -411,12 +411,12 @@ void ADMIN() {
 		case '5':
 			return;
 		default:
-			printf("\t\t´íÎó");
+			printf("\t\té”™è¯¯");
 			break;
 		}
 	}
 }
-//ÆÕÍ¨ÓÃ»§¹¦ÄÜ
+//æ™®é€šç”¨æˆ·åŠŸèƒ½
 void COMMON() {
 	char keyC=0;
 	while(1){
@@ -424,10 +424,10 @@ void COMMON() {
 		{
 			system("cls");
 			printf("\t*****************************\n");
-			printf("\t*     1.²éÑ¯µ¥´Ê            *\n");
-			printf("\t*     2.µ¥´ÊÊÕ²Ø±¾          *\n");
-			printf("\t*     3.²éÑ¯¼ÇÂ¼            *\n");
-			printf("\t*                   4.ÍË³ö  *\n");
+			printf("\t*     1.æŸ¥è¯¢å•è¯            *\n");
+			printf("\t*     2.å•è¯æ”¶è—æœ¬          *\n");
+			printf("\t*     3.æŸ¥è¯¢è®°å½•            *\n");
+			printf("\t*                   4.é€€å‡º  *\n");
 			printf("\t*****************************\n");
 			keyC = getch();
 		} while (keyC != '1'&&keyC != '2'&&keyC != '3'&&keyC != '4');
@@ -442,7 +442,7 @@ void COMMON() {
 			fp0 = fopen("wordd_coll.txt", "a");
 			char bbb[5];
 			if (fgets(bbb,1,fp0) == NULL) {
-				printf("\t*      ÄúÃ»ÓĞ´æÈëµ¥´Ê  ÊÕ²Ø±¾Îª¿Õ      *\n");
+				printf("\t*      æ‚¨æ²¡æœ‰å­˜å…¥å•è¯  æ”¶è—æœ¬ä¸ºç©º      *\n");
 				system("pause");
 			}
 			else {
@@ -456,7 +456,7 @@ void COMMON() {
 				char ccc[5];
 			if ((fgets(ccc, 1, fp_) == NULL)){
 
-				printf("\t*      ÄúÃ»ÓĞ²éÑ¯µ¥´Ê  ¼ÇÂ¼Îª¿Õ      *\n");
+				printf("\t*      æ‚¨æ²¡æœ‰æŸ¥è¯¢å•è¯  è®°å½•ä¸ºç©º      *\n");
 				system("pause");
 			}
 			else {
@@ -468,21 +468,21 @@ void COMMON() {
 		case '4':
 			return;
 		default:
-			printf("\t\t´íÎó");
+			printf("\t\té”™è¯¯");
 			break;
 		}
 	}
 }
 
-//µ¼Èëµ¥´Ê
-void IMPORT() {                    //µ¼Èëµ¥´Ê
+//å¯¼å…¥å•è¯
+void IMPORT() {                    //å¯¼å…¥å•è¯
 	system("cls");
 
 	FILE *fp2;
 	fp2 = fopen("wordd.txt", "a+");
 	int n,x=0;
 	printf("\t*****************************************\n");
-	printf("\t*      ĞèÒªµ¼Èë¶àÉÙ¸öµ¥´Ê               *\n");
+	printf("\t*      éœ€è¦å¯¼å…¥å¤šå°‘ä¸ªå•è¯               *\n");
 	printf("\t*****************************************\n");
 	scanf("%d",&n);
 	tr = (struct w_word*)malloc( n * sizeof(struct w_word));
@@ -490,18 +490,18 @@ void IMPORT() {                    //µ¼Èëµ¥´Ê
 	for (int i = 0; i < n; i++) {
 		printf("********      %d    *********\n",i+1);
 		printf("\n");
-		printf("\t*         ÇëÊäÈëµ¥´Ê              *\n");
+		printf("\t*         è¯·è¾“å…¥å•è¯              *\n");
 		scanf("%s",&(tr + i)->word_);
 		//(tr + i)->word_[strlen((tr + i)->word_) ]='\0';
 		//fputs((wd+i)->word_, fp2);
 		//fputs("     ", fp2);
-		printf("\t*         ÇëÊäÈëÇ°Ãæµ¥´ÊµÄ·­Òë    *\n");
+		printf("\t*         è¯·è¾“å…¥å‰é¢å•è¯çš„ç¿»è¯‘    *\n");
 		scanf("%s", &(tr + i)->trans_);
 		getchar();
 		//fputs((tr + i)->trans_, fp2);
 		//fputs("\n", fp2);
 		printf("\n");
-		printf("\t*         ÇëÊäÈëÇ°Ãæµ¥´ÊµÄÀı¾ä    *\n");
+		printf("\t*         è¯·è¾“å…¥å‰é¢å•è¯çš„ä¾‹å¥    *\n");
 		gets_s((tr+ i)->setence);
 		//fputs((wd + i)->setence, fp2);
 		//fputs("\n", fp2);
@@ -509,7 +509,7 @@ void IMPORT() {                    //µ¼Èëµ¥´Ê
 		while (feof(fp2) != EOF) {
 			while (fread(wd, sizeof(struct w_word), 1, fp2) != NULL) {
 				if ((tr + i)->word_ == wd->word_) {
-					printf("\t*     ´Ëµ¥´ÊÒÑ¾­±»ÊäÈë  Çë²»ÒªÖØ¸´ÊäÈë     \t");
+					printf("\t*     æ­¤å•è¯å·²ç»è¢«è¾“å…¥  è¯·ä¸è¦é‡å¤è¾“å…¥     \t");
 					system("pause");
 					x = 1;
 				}
@@ -526,19 +526,19 @@ void IMPORT() {                    //µ¼Èëµ¥´Ê
 	fclose(fp2);
 	return;
 }                           
-//²é¿´ËùÓĞµ¥´Ê±í
-void VIEW() {              //²é¿´ËùÓĞµ¥´ÊĞÅÏ¢
+//æŸ¥çœ‹æ‰€æœ‰å•è¯è¡¨
+void VIEW() {              //æŸ¥çœ‹æ‰€æœ‰å•è¯ä¿¡æ¯
 	struct w_word *exi=(struct w_word *)malloc(sizeof(struct w_word));
 	FILE *fp4;
 	fp4 = fopen("wordd.txt", "r");
 	if (fp4 == NULL) {
-		printf("\t**      ÎÄ¼şÎ´Â¼Èëµ¥´Ê     **\n ");
+		printf("\t**      æ–‡ä»¶æœªå½•å…¥å•è¯     **\n ");
 		return;
 	}
 	else {
 		while (feof(fp4) != EOF) {
 			while (fread(exi, sizeof(struct w_word), 1, fp4) !=NULL){
-				printf("%s£º  ", exi->word_);
+				printf("%sï¼š  ", exi->word_);
 				puts(exi->trans_);
 				puts("\n");
 			}
@@ -549,7 +549,7 @@ void VIEW() {              //²é¿´ËùÓĞµ¥´ÊĞÅÏ¢
 	system("pause");
 	return;
 }
-//²é¿´ºÍ¹ÜÀíÓÃ»§
+//æŸ¥çœ‹å’Œç®¡ç†ç”¨æˆ·
 void LOANDMA() {
 	int x = 0;
 	struct userna_pw *usp=(struct userna_pw*)malloc(sizeof(struct userna_pw));
@@ -558,7 +558,7 @@ void LOANDMA() {
 	FILE *fp5;
 	fp5 = fopen("username_pwCOM.txt", "r");
 	if (fp5== NULL) {
-		printf("\t**      ÎŞÓÃ»§     **\n ");
+		printf("\t**      æ— ç”¨æˆ·     **\n ");
 		while (getchar() != '\n')
 			continue;
 		return;
@@ -566,9 +566,9 @@ void LOANDMA() {
 	else {
 		while (feof(fp5) != EOF) {
 			while (fread(usp,sizeof(struct userna_pw),1,fp5) != NULL) {
-				printf("****ÓÃ»§Ãû£º");
+				printf("****ç”¨æˆ·åï¼š");
 				puts(usp->name1);
-				printf("****ÃÜÂë£º");
+				printf("****å¯†ç ï¼š");
 				puts(usp->passd1);
 			}
 			break;
@@ -578,8 +578,8 @@ void LOANDMA() {
 	//fflush(fp5);
 	fclose(fp5);
 	system("pause");
-	printf("\t*     ÊÇ·ñÑ¡ÔñÉ¾³ıÓÃ»§       *\n");
-	printf("\t*   1.ÊÇ           2.·ñ      *\n");
+	printf("\t*     æ˜¯å¦é€‰æ‹©åˆ é™¤ç”¨æˆ·       *\n");
+	printf("\t*   1.æ˜¯           2.å¦      *\n");
 	char keyy = getch();
 	if (keyy == '1') {
 		FILE *fpp;
@@ -589,10 +589,10 @@ void LOANDMA() {
 		struct userna_pw  us[105];
 		int i=0,m1=(-1),qu=0;
 			while (1) {
-				printf("\t*      ÇëÊäÈëÓÃ»§µÄÓÃ»§Ãû      *\n");
+				printf("\t*      è¯·è¾“å…¥ç”¨æˆ·çš„ç”¨æˆ·å      *\n");
 				scanf("%s", number);
 				if (number[0] == '\0') {
-					printf("    ´íÎó£¡£¡    ÇëÖØĞÂÊäÈë       ");
+					printf("    é”™è¯¯ï¼ï¼    è¯·é‡æ–°è¾“å…¥       ");
 					continue;
 				}
 				else
@@ -605,7 +605,7 @@ void LOANDMA() {
 				}
 				fclose(fpp);
 				if (i == 0) {
-					printf("*    ÎŞÓÃ»§    *");
+					printf("*    æ— ç”¨æˆ·    *");
 					system("pause");
 					return;
 				}
@@ -616,7 +616,7 @@ void LOANDMA() {
 					}
 				}
 				if(m1==-1){
-						printf("*    ÓÃ»§²»´æÔÚ    *");
+						printf("*    ç”¨æˆ·ä¸å­˜åœ¨    *");
 						qu = 1;
 					
 				}
@@ -630,16 +630,16 @@ void LOANDMA() {
 					}
 					for (int k = 0; k < i; k++) {
 						if (fwrite(&us[k], sizeof(struct userna_pw), 1, fpp) != 1) {
-							printf("*      É¾³ıÊ§°Ü      *");
+							printf("*      åˆ é™¤å¤±è´¥      *");
 							system("pause");
 							x = 1;
 						}
 					}
-					//printf("*      É¾³ı³É¹¦      *");
+					//printf("*      åˆ é™¤æˆåŠŸ      *");
 				}
 				if (x == 0) {
-					printf("\t*      É¾³ı³É¹¦        *\n");
-					printf("\t*       »Ø³µ½øÈëÏÂÒ»²½  *\n");
+					printf("\t*      åˆ é™¤æˆåŠŸ        *\n");
+					printf("\t*       å›è½¦è¿›å…¥ä¸‹ä¸€æ­¥  *\n");
 					system("pause");
 				}
 
@@ -650,7 +650,7 @@ void LOANDMA() {
 	}
 
 }
-//´æµ¥´Ê¼ÇÂ¼±¾
+//å­˜å•è¯è®°å½•æœ¬
 void WORD_CO(struct w_word *inpu) {
 	FILE *fp6;
 	fp6 = fopen("word_coll.txt", "a");
@@ -659,11 +659,11 @@ void WORD_CO(struct w_word *inpu) {
 	return;
 
 }
-//ÏÔÊ¾µ¥´Ê¼ÇÂ¼±¾
+//æ˜¾ç¤ºå•è¯è®°å½•æœ¬
 void FWORD_CO() {
 	system("cls");
 	printf("\t*****************************************\n");
-	printf("\t*       µ¥´Ê¼ÇÂ¼±¾                      *\n");
+	printf("\t*       å•è¯è®°å½•æœ¬                      *\n");
 	printf("\t*****************************************\n");
 	struct w_word *fword=(struct w_word *)malloc(sizeof(struct w_word));
 	//struct word_coll {
@@ -678,7 +678,7 @@ void FWORD_CO() {
 	FILE *fp7;
 	fp7 = fopen("word_coll.txt", "r");
 	if (fp7 == NULL) {
-		printf("\t*        µ¥´¿¼ÇÂ¼±¾ÎŞµ¥´Ê      *\n");
+		printf("\t*        å•çº¯è®°å½•æœ¬æ— å•è¯      *\n");
 		system("pause");
 		return;
 	}
@@ -696,11 +696,11 @@ void FWORD_CO() {
 			//memset(input, 0, sizeof(char) * 50);
 		}
 	}
-	printf("\t**************»Ø³µ¼ü·µ»Ø*****************\n");
+	printf("\t**************å›è½¦é”®è¿”å›*****************\n");
 	system("pause");
 	return;
 }
-//´æ²éÑ¯¼ÇÂ¼
+//å­˜æŸ¥è¯¢è®°å½•
 void QUE(struct w_word *input) {
 	FILE *fps;
 	fps = fopen("query log.txt", "a");
@@ -708,11 +708,11 @@ void QUE(struct w_word *input) {
 	fclose(fps);
 	return;
 }
-//ÏÔÊ¾²éÑ¯¼ÇÂ¼
+//æ˜¾ç¤ºæŸ¥è¯¢è®°å½•
 void FQUE() {
 	system("cls");
 	printf("\t*****************************************\n");
-	printf("\t*              ²éÑ¯¼ÇÂ¼               *\n");
+	printf("\t*              æŸ¥è¯¢è®°å½•               *\n");
 	printf("\t*****************************************\n");
 	struct w_word *fque = (struct w_word *)malloc(sizeof(struct w_word));
 	//struct query_l {
@@ -740,17 +740,16 @@ void FQUE() {
 			//memset(inputt, 0, sizeof(char) * 50);
 		}
 	}
-	printf("\t**************»Ø³µ¼ü·µ»Ø*****************\n");
+	printf("\t**************å›è½¦é”®è¿”å›*****************\n");
 	while (getchar() != '\n')
 		continue;
 	return;
 }
-//ÅÅĞò²¢ÏÔÊ¾µ¥´Ê±í
+//æ’åºå¹¶æ˜¾ç¤ºå•è¯è¡¨
 void SORT() {
 	char *ptsw[10000], *ptst[10000];
 	int a=5;
-	//a = sizeof(wd) / sizeof(struct w_word);
-
+	
 	for (int i = 0; i < a; ++i) {
 	//	ptsw[i] = (wd -i)->word_;
 		ptst[i] = (tr - i)->trans_;
@@ -781,6 +780,6 @@ void SORT() {
 
 
 int main() {
- PRINTF1();             //Ö÷½çÃæ
+ PRINTF1();             //ä¸»ç•Œé¢
 		return 0;
 }
